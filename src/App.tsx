@@ -1,26 +1,74 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Tab, Tabs } from "@mui/material";
+import CreateDataFromApi from "./create-data-from-api/create-data-from-api";
+import DeleteTodoList from "./delete-todo-list/delete-todo-list";
+import { useState } from "react";
 
-function App() {
+
+export default function App() {
+  const [tabsValue, setTabsValue] = useState<string>("TODO");
+  const onChangeTabs = (event: any, newValue: string) => {
+    setTabsValue(newValue);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Tabs
+        value={tabsValue}
+        onChange={onChangeTabs}
+        TabIndicatorProps={{ sx: { backgroundColor: "transparent" } }}
+        variant="scrollable"
+        sx={{
+          borderBottom: `1px solid ${'#f5f5f5'}`,
+          "& button": {
+            borderTopLeftRadius: 8,
+            borderTopRightRadius: 8,
+            backgroundColor: '#f5f5f5',
+            marginRight: 1,
+            minHeight: "41px",
+            paddingTop: "12px",
+            paddingBottom: "12px",
+          },
+          "& button:focus": {
+            backgroundColor: '#14378A',
+            color: "#ffffff",
+          },
+        }}
+      >
+        <Tab
+          value="TODO"
+          onClick={() => setTabsValue("TODO")}
+          iconPosition="start"
+          label='Auto Delete Todo List'
+          sx={{
+            "&.Mui-selected": {
+              color: "#ffffff",
+              backgroundColor: '#14378A',
+            },
+          }}
+        />
+        <Tab
+          value="TRANFORM"
+          onClick={() => setTabsValue("TRANFORM")}
+          iconPosition="start"
+          label="Create data from API"
+          sx={{
+            "&.Mui-selected": {
+              color: "#ffffff",
+              backgroundColor: '#14378A',
+            },
+          }}
+        />
+      </Tabs>
+      {tabsValue == 'TODO' && (
+        <>
+          <DeleteTodoList />
+        </>
+      )}
+      {tabsValue == 'TRANFORM' && (
+        <>
+          <CreateDataFromApi />
+        </>
+      )}
+    </>
   );
 }
-
-export default App;

@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.data-list-container {
+  margin: 3rem 0;
+}
+
+.data-list-content,
+.fruit-content {
+  margin: 1rem 0;
+}
