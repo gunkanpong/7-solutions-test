@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-import UsersApi from "../api/user/users.api";
+import UsersApi from "../../api/user/users.api";
 import { Person, TransformedData } from "./utils/types";
 
 export default function CreateDataFromApi() {
@@ -79,16 +79,16 @@ export default function CreateDataFromApi() {
           return (
             <div key={index} style={{ padding: '0px 32px' }}>
               <h2>{departmentName}</h2>
-              <p>Male Count: {departmentInfo.male}</p>
-              <p>Female Count: {departmentInfo.female}</p>
-              <p>Age Range: {departmentInfo.ageRange}</p>
-              <p>Hair Color Summary:</p>
+              <p>Male : {departmentInfo.male}</p>
+              <p>Female : {departmentInfo.female}</p>
+              <p>Age Range : {departmentInfo.ageRange}</p>
+              <p>Hair Color :</p>
               <ul>
                 {Object.keys(departmentInfo.hair).map((color, colorIndex) => (
                   <li key={colorIndex}>{color}: {departmentInfo.hair[color]}</li>
                 ))}
               </ul>
-              <p>Address Summary:</p>
+              <p>Address :</p>
               <ul>
                 {Object.keys(departmentInfo.addressUser).map((user, userIndex) => (
                   <li key={userIndex}>{user}: {departmentInfo.addressUser[user]}</li>

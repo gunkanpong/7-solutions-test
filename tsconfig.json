@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "src/create-data-from-api/create-data-from.test.tsx"  ]
+, "src/page/create-data-from-api/create-data-from.test.tsx"  ]
 }

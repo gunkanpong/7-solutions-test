@@ -1,6 +1,6 @@
 import { Tab, Tabs } from "@mui/material";
-import CreateDataFromApi from "./create-data-from-api/create-data-from-api";
-import DeleteTodoList from "./delete-todo-list/delete-todo-list";
+import CreateDataFromApi from "./page/create-data-from-api/create-data-from-api";
+import DeleteTodoList from "./page/delete-todo-list/delete-todo-list";
 import { useState } from "react";
 
 

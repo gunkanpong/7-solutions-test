@@ -16,7 +16,7 @@ const CustomButton = styled(Button)<{}>(({ theme }) => {
       background: `#ffffff !important`,
       backgroundcolor: `#000000 !important`,
       color: `#000000 !important`,
-      width: 150,
+      width: 300,
       border: 'none !important',
       '&:hover': {
         backgroundcolor: `#ffffff !important`,
